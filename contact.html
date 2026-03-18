@@ -3,236 +3,286 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Brandon T. Malaba</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,600&family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
-    
+    <title>Instruct | Brandon T. Malaba</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Barlow+Condensed:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { 
-            font-family: 'Poppins', sans-serif; 
-            background: #020617; 
-            color: #f8fafc; 
-            display: flex; 
-            flex-direction: column; 
-            min-height: 100vh;
-            overflow-x: hidden;
+        :root {
+            --void: #050508; --obsidian: #0c0c12; --chamber: #13131c; --slate: #1e1e2e;
+            --gold: #D4AF37; --gold-dim: #a8882a; --gold-pale: #f0d87a;
+            --silver: #cbd5e1; --mist: #64748b; --parchment: #f5f0e8;
+            --glass-gold: rgba(212,175,55,0.10); --glass-border: rgba(212,175,55,0.18);
+            --glass-border-bright: rgba(212,175,55,0.4);
+            --font-serif: 'EB Garamond', serif; --font-cond: 'Barlow Condensed', sans-serif;
         }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-cond); background: var(--void); color: var(--silver); min-height: 100vh; overflow-x: hidden; display: flex; flex-direction: column; }
+        body::before { content: ''; position: fixed; inset: 0; background: linear-gradient(rgba(5,5,8,0.75), rgba(5,5,8,0.75)),
+                url('law_office_background.jpg') center center / cover no-repeat; z-index: 0; pointer-events: none; }
+        body::after { content: ''; position: fixed; inset: 0; background: repeating-linear-gradient(180deg, transparent, transparent 60px, rgba(212,175,55,0.018) 60px, rgba(212,175,55,0.018) 61px); z-index: 0; pointer-events: none; }
 
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(rgba(10, 15, 30, 0.82), rgba(10, 15, 30, 0.88)), 
-                        url('bg-contact.jpg');
-            background-size: cover;
-            background-position: center top;
-            z-index: -1;
-        }
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 56px; height: 72px; display: flex; align-items: center; justify-content: space-between; background: rgba(5,5,8,0.75); backdrop-filter: blur(24px); border-bottom: 1px solid var(--glass-border); }
+        .nav-seal { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+        .nav-seal-icon { width: 36px; height: 36px; border: 1px solid var(--glass-border-bright); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); font-size: 1rem; color: var(--gold); }
+        .nav-seal-text { font-size: 0.7rem; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: var(--silver); opacity: 0.8; }
+        .nav-seal-text strong { color: var(--gold); font-weight: 700; }
+        .nav-links { display: flex; gap: 44px; list-style: none; align-items: center; }
+        .nav-links a { font-size: 0.65rem; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--mist); text-decoration: none; transition: color 0.3s; position: relative; }
+        .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--gold); transition: width 0.3s ease; }
+        .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+        .nav-links a.active::after, .nav-links a:hover::after { width: 100%; }
+        .nav-cta { padding: 9px 22px; border: 1px solid var(--glass-border-bright); color: var(--gold) !important; font-size: 0.6rem !important; font-weight: 600 !important; letter-spacing: 2.5px !important; border-radius: 2px; transition: background 0.3s !important; }
+        .nav-cta:hover { background: var(--glass-gold) !important; border-color: var(--gold) !important; }
+        .nav-cta::after { display: none !important; }
 
-        header { 
-            background: rgba(15, 23, 42, 0.7); 
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            padding: clamp(18px, 4vw, 30px) 5%; 
-            border-bottom: 2px solid #D4AF37; 
-            text-align: center; 
-        }
-        header h1 {
-            font-size: clamp(1.5rem, 5vw, 2rem);
-            letter-spacing: clamp(1px, 0.5vw, 2px);
-        }
-
-        .gold-text { color: #D4AF37 !important; font-family: 'Playfair Display', serif; }
-        
-        nav { 
-            background: rgba(30, 41, 59, 0.6); 
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            padding: 12px 5%; 
-            border-bottom: 1px solid rgba(255,255,255,0.05); 
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        nav ul { 
-            list-style: none; 
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 8px 20px;
-        }
-        nav ul li a { 
-            text-decoration: none; 
-            color: #cbd5e1; 
-            font-weight: 600; 
-            font-size: clamp(0.7rem, 1.8vw, 0.85rem); 
-            text-transform: uppercase; 
-            transition: 0.3s;
-            white-space: nowrap;
-        }
-        nav ul li a:hover, nav ul li a.active { color: #D4AF37; }
-
-        .contact-main {
+        /* ── MAIN SPLIT ── */
+        main {
+            position: relative; z-index: 1;
             flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: clamp(30px, 5vw, 60px) 5%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding-top: 72px;
+            min-height: 100vh;
         }
 
-        .glass-card {
-            background: rgba(255, 255, 255, 0.03); 
-            backdrop-filter: blur(20px); 
-            -webkit-backdrop-filter: blur(20px);
-            padding: clamp(30px, 6vw, 50px); 
-            border-radius: 15px; 
-            border: 1px solid rgba(212, 175, 55, 0.3); 
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
-            max-width: 550px;
-            width: 100%;
-            text-align: center;
-            animation: fadeIn 0.8s ease-out;
-        }
+        /* LEFT */
+        .contact-left { display: flex; flex-direction: column; justify-content: center; padding: 80px 60px 80px 72px; border-right: 1px solid var(--glass-border); animation: fade-up 0.8s 0.2s both; }
 
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .contact-eyebrow { font-size: 0.6rem; font-weight: 400; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); opacity: 0.7; margin-bottom: 18px; }
+        .contact-headline { font-family: var(--font-serif); font-size: clamp(3rem, 5.5vw, 5.5rem); font-weight: 400; line-height: 0.95; color: var(--parchment); margin-bottom: 32px; }
+        .contact-headline em { font-style: italic; color: var(--gold); display: block; }
+        .contact-rule { width: 50px; height: 1px; background: linear-gradient(90deg, var(--gold), transparent); margin-bottom: 28px; }
+        .contact-pitch { font-size: 0.85rem; font-weight: 300; line-height: 1.85; color: var(--silver); opacity: 0.8; max-width: 400px; margin-bottom: 48px; }
 
-        @media (prefers-reduced-motion: reduce) {
-            .glass-card { animation: none; }
-        }
+        /* Contact rows */
+        .contact-methods { display: flex; flex-direction: column; }
+        .contact-method { display: flex; align-items: flex-start; gap: 18px; padding: 20px 0; border-bottom: 1px solid var(--glass-border); text-decoration: none; transition: padding-left 0.3s; cursor: pointer; }
+        .contact-method:last-child { border-bottom: none; }
+        .contact-method:hover { padding-left: 8px; }
+        .method-icon { width: 34px; height: 34px; background: rgba(212,175,55,0.08); border: 1px solid rgba(212,175,55,0.2); border-radius: 2px; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; flex-shrink: 0; transition: background 0.3s, border-color 0.3s; color: var(--gold); }
+        .contact-method:hover .method-icon { background: rgba(212,175,55,0.15); border-color: var(--gold); }
+        .method-label { font-size: 0.54rem; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); opacity: 0.6; margin-bottom: 3px; }
+        .method-value { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 400; color: var(--parchment); transition: color 0.3s; }
+        .contact-method:hover .method-value { color: #fff; }
+        .method-hint { font-size: 0.6rem; font-weight: 300; color: var(--mist); opacity: 0.5; }
 
-        .glass-card h2 {
-            font-size: clamp(1.2rem, 4vw, 1.6rem);
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            letter-spacing: clamp(1px, 0.5vw, 2px);
-        }
+        /* Disclaimer note */
+        .legal-note { margin-top: 36px; padding: 16px 20px; background: rgba(212,175,55,0.04); border: 1px solid var(--glass-border); border-left: 2px solid var(--gold); border-radius: 0 2px 2px 0; }
+        .legal-note p { font-size: 0.65rem; font-weight: 300; line-height: 1.7; color: var(--mist); font-style: italic; }
+        .legal-note p strong { color: var(--gold-pale); font-weight: 600; font-style: normal; }
 
-        .glass-card > p {
-            color: #94a3b8; 
-            font-size: clamp(0.75rem, 2vw, 0.8rem); 
-            margin-bottom: 35px; 
-            line-height: 1.6;
-        }
+        /* RIGHT — form */
+        .contact-right { display: flex; flex-direction: column; justify-content: center; padding: 80px 72px 80px 60px; animation: fade-up 0.8s 0.4s both; }
+        .form-eyebrow { font-size: 0.6rem; font-weight: 400; letter-spacing: 5px; text-transform: uppercase; color: var(--mist); opacity: 0.5; margin-bottom: 10px; }
+        .form-heading { font-family: var(--font-serif); font-size: 2rem; font-weight: 400; color: var(--parchment); margin-bottom: 32px; line-height: 1.1; }
 
-        .label { 
-            color: #D4AF37; 
-            font-size: clamp(0.6rem, 1.5vw, 0.65rem); 
-            text-transform: uppercase; 
-            letter-spacing: 3px; 
-            margin-bottom: 8px; 
-            font-weight: 800; 
-        }
-        .info-value { 
-            color: #f8fafc; 
-            font-size: clamp(0.9rem, 2.5vw, 1.1rem); 
-            margin-bottom: 28px; 
-            font-weight: 400; 
-        }
-        .info-value a { 
-            color: inherit; 
-            text-decoration: none; 
-            transition: 0.3s;
-            word-break: break-word;
-        }
-        .info-value a:hover { color: #D4AF37; }
+        /* Glass form */
+        .glass-form { background: var(--glass-gold); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid var(--glass-border); border-radius: 2px; padding: 40px 36px; position: relative; overflow: hidden; }
+        .glass-form::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0.3; }
 
-        .btn-initiate {
-            display: inline-block;
-            background: linear-gradient(145deg, #D4AF37, #B8952E);
-            color: #0f172a;
-            padding: clamp(12px, 2vw, 16px) clamp(24px, 5vw, 40px);
-            text-decoration: none;
-            font-weight: 800;
-            text-transform: uppercase;
-            font-size: clamp(0.65rem, 1.8vw, 0.75rem);
-            letter-spacing: 2px;
-            border-radius: 4px;
-            margin-top: 10px;
-            transition: 0.4s;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-        .btn-initiate:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3);
-            filter: brightness(1.1);
-        }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+        .form-group { display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+        .form-label { font-size: 0.56rem; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--mist); opacity: 0.55; }
+        .form-input, .form-select, .form-textarea { width: 100%; background: rgba(5,5,8,0.4); border: 1px solid var(--glass-border); border-radius: 2px; padding: 12px 15px; font-family: var(--font-cond); font-size: 0.82rem; font-weight: 300; color: var(--parchment); outline: none; transition: border-color 0.3s, background 0.3s; appearance: none; }
+        .form-input::placeholder, .form-textarea::placeholder { color: var(--mist); opacity: 0.3; }
+        .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--gold); background: rgba(5,5,8,0.6); }
+        .form-select { cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23D4AF37' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; background-color: rgba(5,5,8,0.4); padding-right: 36px; }
+        .form-select option { background: #111118; color: var(--parchment); }
+        .form-textarea { resize: vertical; min-height: 100px; line-height: 1.6; }
 
-        @media (hover: none) {
-            .btn-initiate:hover { transform: none; filter: none; }
-            .btn-initiate:active { box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3); }
-        }
+        .form-submit { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-top: 22px; }
+        .btn-send { display: flex; align-items: center; gap: 10px; padding: 14px 28px; background: linear-gradient(135deg, var(--gold), var(--gold-dim)); color: var(--void); border: none; border-radius: 2px; font-family: var(--font-cond); font-size: 0.62rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; cursor: pointer; transition: box-shadow 0.3s, transform 0.2s; }
+        .btn-send:hover { box-shadow: 0 8px 24px rgba(212,175,55,0.3); transform: translateY(-1px); }
+        .btn-send .arrow { transition: transform 0.3s; }
+        .btn-send:hover .arrow { transform: translateX(4px); }
+        .form-note { font-size: 0.58rem; font-weight: 300; color: var(--mist); opacity: 0.4; letter-spacing: 0.5px; line-height: 1.5; }
 
-        .glass-card .footnote {
-            margin-top: 35px; 
-            font-size: clamp(0.55rem, 1.5vw, 0.6rem); 
-            color: #64748b; 
-            font-style: italic;
-        }
+        .form-success { display: none; text-align: center; padding: 36px 16px; }
+        .glass-form.submitted .form-inner { display: none; }
+        .glass-form.submitted .form-success { display: block; }
+        .success-icon { font-size: 2rem; color: var(--gold); margin-bottom: 16px; animation: pop-in 0.4s cubic-bezier(0.175,0.885,0.32,1.275); }
+        @keyframes pop-in { from { transform: scale(0); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        .success-title { font-family: var(--font-serif); font-size: 1.7rem; font-weight: 400; color: var(--parchment); margin-bottom: 8px; }
+        .success-sub { font-size: 0.62rem; font-weight: 300; letter-spacing: 2.5px; text-transform: uppercase; color: var(--mist); }
 
-        footer { 
-            padding: clamp(16px, 3vw, 20px) 5%; 
-            text-align: center; 
-            color: rgba(203, 213, 225, 0.4); 
-            font-size: clamp(0.6rem, 1.5vw, 0.65rem); 
-            letter-spacing: 1px;
-            border-top: 1px solid rgba(212, 175, 55, 0.1);
-        }
+        /* TICKER + FOOTER */
+        .ticker-wrap { position: relative; z-index: 1; overflow: hidden; padding: 18px 0; background: linear-gradient(90deg, #0c0c12, #111118, #0c0c12); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border); }
+        .ticker-wrap::before, .ticker-wrap::after { content: ''; position: absolute; top: 0; bottom: 0; width: 120px; z-index: 2; pointer-events: none; }
+        .ticker-wrap::before { left: 0;  background: linear-gradient(90deg,  #0c0c12, transparent); }
+        .ticker-wrap::after  { right: 0; background: linear-gradient(-90deg, #0c0c12, transparent); }
+        .ticker-move { display: flex; white-space: nowrap; width: max-content; animation: ticker 60s linear infinite; }
+        .ticker-item { padding: 0 72px; font-size: 0.62rem; font-weight: 300; letter-spacing: 4px; text-transform: uppercase; color: var(--mist); }
+        .ticker-item em { color: var(--gold); font-style: normal; font-weight: 600; }
+        .ticker-diamond { color: var(--gold); opacity: 0.4; font-size: 0.5rem; }
+        @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-        @media (max-width: 600px) {
-            .contact-main { padding: 24px 4%; align-items: flex-start; padding-top: 40px; }
-            .glass-card { border-radius: 10px; }
-        }
+        footer { position: relative; z-index: 1; padding: 36px 56px; display: flex; align-items: center; justify-content: space-between; background: rgba(5,5,8,0.7); backdrop-filter: blur(12px); border-top: 1px solid var(--glass-border); }
+        .footer-brand { font-family: var(--font-serif); font-size: 1rem; font-weight: 400; letter-spacing: 3px; color: var(--mist); font-style: italic; text-decoration: none; }
+        .footer-brand strong { color: var(--gold); font-weight: 600; font-style: normal; }
+        .footer-copy { font-size: 0.58rem; font-weight: 300; letter-spacing: 2.5px; text-transform: uppercase; color: var(--mist); opacity: 0.4; }
+        .footer-links { display: flex; gap: 28px; list-style: none; }
+        .footer-links a { font-size: 0.58rem; letter-spacing: 2px; text-transform: uppercase; color: var(--mist); text-decoration: none; opacity: 0.4; transition: opacity 0.3s, color 0.3s; }
+        .footer-links a:hover { opacity: 1; color: var(--gold); }
 
-        @media (max-height: 500px) and (orientation: landscape) {
-            .contact-main { align-items: flex-start; padding-top: 20px; }
-            .glass-card { padding: 24px; }
-            .glass-card h2 { margin-bottom: 16px; }
-            .glass-card > p { margin-bottom: 20px; }
-            .info-value { margin-bottom: 16px; }
-            nav ul { gap: 6px 16px; }
-        }
+        @keyframes fade-up { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+
+        @media (max-width: 1000px) { main { grid-template-columns: 1fr; } .contact-left { padding: 60px 40px 40px; border-right: none; border-bottom: 1px solid var(--glass-border); } .contact-right { padding: 40px 40px 60px; } }
+        @media (max-width: 768px) { nav { padding: 0 24px; } .nav-links { gap: 20px; } .form-row { grid-template-columns: 1fr; } footer { flex-direction: column; gap: 12px; text-align: center; padding: 28px 24px; } .footer-links { justify-content: center; } }
+        @media (max-width: 560px) { .nav-links { display: none; } .form-submit { flex-direction: column; align-items: flex-start; } .btn-send { width: 100%; justify-content: center; } }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1 class="gold-text">Brandon T. Malaba</h1>
-    </header>
+    <div style="position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 100% 50% at 50% 0%,rgba(212,175,55,0.12) 0%,transparent 60%),radial-gradient(ellipse 60% 80% at 0% 100%,rgba(212,175,55,0.07) 0%,transparent 50%)"></div>
 
     <nav>
-        <ul>
+        <a href="index.html" class="nav-seal">
+            <div class="nav-seal-icon">B</div>
+            <span class="nav-seal-text"><strong>B.T.</strong> Malaba</span>
+        </a>
+        <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="cv.html">Profile</a></li>
             <li><a href="articles.html">Repository</a></li>
-            <li><a href="contact.html" class="active">Contact</a></li>
+            <li><a href="contact.html" class="nav-cta active">Instruct</a></li>
         </ul>
     </nav>
 
-    <main class="contact-main">
-        <section class="glass-card">
-            <h2 class="gold-text">Secure Talent</h2>
-            
-            <p>Direct inquiries for candidate attorney positions and legal collaborations.</p>
+    <main>
+        <!-- LEFT -->
+        <div class="contact-left">
+            <p class="contact-eyebrow">Open to Instructions</p>
+            <h1 class="contact-headline">Instruct<br><em>Counsel</em></h1>
+            <div class="contact-rule"></div>
+            <p class="contact-pitch">Available for candidate attorney positions, legal research contracts, and junior litigation support across High Court, Magistrates' Court, and corporate advisory environments. Precision drafting. Strategic thinking. Immediate availability.</p>
 
-            <div class="label">Electronic Mail</div>
-            <div class="info-value"><a href="mailto:brandonmalaba6@gmail.com">brandonmalaba6@gmail.com</a></div>
+            <div class="contact-methods">
+                <a href="/cdn-cgi/l/email-protection#741606151a101b1a19151815161542341319151d185a171b19" class="contact-method">
+                    <div class="method-icon">✉</div>
+                    <div>
+                        <p class="method-label">Electronic Mail</p>
+                        <p class="method-value"><span class="__cf_email__" data-cfemail="1f7d6d7e717b7071727e737e7d7e295f78727e7673317c7072">[email&#160;protected]</span></p>
+                        <p class="method-hint">Preferred for formal instructions</p>
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/in/brandon-malaba/" target="_blank" class="contact-method">
+                    <div class="method-icon" style="font-size:0.7rem;font-weight:700;">in</div>
+                    <div>
+                        <p class="method-label">Professional Network</p>
+                        <p class="method-value">LinkedIn Profile</p>
+                        <p class="method-hint">Certifications & endorsements</p>
+                    </div>
+                </a>
+                <div class="contact-method" style="cursor:default;">
+                    <div class="method-icon">◆</div>
+                    <div>
+                        <p class="method-label">Jurisdiction</p>
+                        <p class="method-value">Johannesburg, South Africa</p>
+                        <p class="method-hint">Gauteng Division — High Court</p>
+                    </div>
+                </div>
+            </div>
 
-            <div class="label">Professional Network</div>
-            <div class="info-value"><a href="https://linkedin.com/in/brandon-malaba" target="_blank">LinkedIn Profile</a></div>
+            <div class="legal-note">
+                <p><strong>Note:</strong> This site does not constitute legal advice and no attorney-client relationship is formed by communication through this platform. For formal legal matters, please correspond via the contact channels above.</p>
+            </div>
+        </div>
 
-            <div class="label">Location</div>
-            <div class="info-value">Johannesburg, South Africa</div>
+        <!-- RIGHT -->
+        <div class="contact-right">
+            <p class="form-eyebrow">Send an Instruction</p>
+            <h2 class="form-heading">Open a<br>matter</h2>
 
-            <a href="mailto:brandonmalaba6@gmail.com" class="btn-initiate">Initiate Contact</a>
+            <div class="glass-form" id="glassForm">
+                <div class="form-inner">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="fname">First Name</label>
+                            <input class="form-input" type="text" id="fname" placeholder="Jane">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="lname">Last Name</label>
+                            <input class="form-input" type="text" id="lname" placeholder="Smith">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="org">Organisation / Firm</label>
+                        <input class="form-input" type="text" id="org" placeholder="Smith & Associates Inc.">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email Address</label>
+                        <input class="form-input" type="email" id="email" placeholder="jane@smithattorneys.co.za">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="subject">Nature of Instruction</label>
+                        <select class="form-select" id="subject">
+                            <option value="" disabled selected>Select a category</option>
+                            <option value="Candidate Attorney Position">Candidate Attorney Position</option>
+                            <option value="Litigation Support">Litigation Support</option>
+                            <option value="Legal Research">Legal Research Contract</option>
+                            <option value="Corporate Advisory">Corporate Advisory</option>
+                            <option value="Academic Collaboration">Academic Collaboration</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="message">Brief</label>
+                        <textarea class="form-textarea" id="message" placeholder="Describe the matter or opportunity..."></textarea>
+                    </div>
+                    <div class="form-submit">
+                        <button class="btn-send" onclick="submitForm()">Send Instruction <span class="arrow">→</span></button>
+                        <p class="form-note">Response within 24 hours.<br>All matters handled with discretion.</p>
+                    </div>
+                </div>
 
-            <p class="footnote">Available for interview and PVT hour verification upon request.</p>
-        </section>
+                <div class="form-success" id="formSuccess">
+                    <div class="success-icon">◆</div>
+                    <h3 class="success-title">Matter Received</h3>
+                    <p class="success-sub">Response within 24 hours</p>
+                </div>
+            </div>
+        </div>
     </main>
 
+    <div class="ticker-wrap">
+        <div class="ticker-move">
+            <span class="ticker-item"><em>Audi alteram partem</em> &nbsp;<span class="ticker-diamond">◆</span>&nbsp; Hear the other side</span>
+            <span class="ticker-item"><em>Fiat justitia ruat caelum</em> &nbsp;<span class="ticker-diamond">◆</span>&nbsp; Let justice be done</span>
+            <span class="ticker-item"><em>Nemo iudex in causa sua</em> &nbsp;<span class="ticker-diamond">◆</span>&nbsp; No man a judge in his own cause</span>
+            <span class="ticker-item"><em>Ubi jus ibi remedium</em> &nbsp;<span class="ticker-diamond">◆</span>&nbsp; Where there is a right, there is a remedy</span>
+            <span class="ticker-item"><em>Pacta sunt servanda</em> &nbsp;<span class="ticker-diamond">◆</span>&nbsp; Agreements must be kept</span>
+            <span class="ticker-item"><em>Audi alteram partem</em> &nbsp;<span class="ticker-diamond">◆</span>&nbsp; Hear the other side</span>
+            <span class="ticker-item"><em>Fiat justitia ruat caelum</em> &nbsp;<span class="ticker-diamond">◆</span>&nbsp; Let justice be done</span>
+            <span class="ticker-item"><em>Nemo iudex in causa sua</em> &nbsp;<span class="ticker-diamond">◆</span>&nbsp; No man a judge in his own cause</span>
+            <span class="ticker-item"><em>Ubi jus ibi remedium</em> &nbsp;<span class="ticker-diamond">◆</span>&nbsp; Where there is a right, there is a remedy</span>
+            <span class="ticker-item"><em>Pacta sunt servanda</em> &nbsp;<span class="ticker-diamond">◆</span>&nbsp; Agreements must be kept</span>
+        </div>
+    </div>
+
     <footer>
-        &copy; 2026 Brandon T. Malaba | Candidate Attorney
+        <a href="index.html" class="footer-brand"><strong>Brandon T.</strong> Malaba</a>
+        <p class="footer-copy">&copy; 2026 &nbsp;·&nbsp; LLB (UFS) &nbsp;·&nbsp; All rights reserved</p>
+        <ul class="footer-links">
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="/cdn-cgi/l/email-protection#9ffdedfef1fbf0f1f2fef3fefdfea9dff8f2fef6f3b1fcf0f2">Email</a></li>
+            <li><a href="cv.html">Profile</a></li>
+        </ul>
     </footer>
 
-</body>
-</html>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        function submitForm() {
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            if (!email || !message) {
+                [document.getElementById('email'), document.getElementById('message')].forEach(el => {
+                    if (!el.value.trim()) { el.style.borderColor = 'var(--gold)'; setTimeout(() => el.style.borderColor = '', 1500); }
+                });
+                return;
+            }
+            const fname = document.getElementById('fname').value;
+            const lname = document.getElementById('lname').value;
+            const org = document.getElementById('org').value;
+            const subject = document.getElementById('subject').value || 'Website Instruction';
+            const body = `Name: ${fname} ${lname}\nOrganisation: ${org}\n\n${message}`;
+            window.location.href = `mailto:brandonmalaba6@gma
