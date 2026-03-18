@@ -158,11 +158,11 @@
             <p class="contact-pitch">Available for candidate attorney positions, legal research contracts, and junior litigation support across High Court, Magistrates' Court, and corporate advisory environments. Precision drafting. Strategic thinking. Immediate availability.</p>
 
             <div class="contact-methods">
-                <a href="/cdn-cgi/l/email-protection#741606151a101b1a19151815161542341319151d185a171b19" class="contact-method">
+                <a href="mailto:brandonmalaba6@gmail.com" class="contact-method">
                     <div class="method-icon">✉</div>
                     <div>
                         <p class="method-label">Electronic Mail</p>
-                        <p class="method-value"><span class="__cf_email__" data-cfemail="1f7d6d7e717b7071727e737e7d7e295f78727e7673317c7072">[email&#160;protected]</span></p>
+                        <p class="method-value">brandonmalaba6@gmail.com</p>
                         <p class="method-hint">Preferred for formal instructions</p>
                     </div>
                 </a>
@@ -265,24 +265,65 @@
         <p class="footer-copy">&copy; 2026 &nbsp;·&nbsp; LLB (UFS) &nbsp;·&nbsp; All rights reserved</p>
         <ul class="footer-links">
             <li><a href="#">LinkedIn</a></li>
-            <li><a href="/cdn-cgi/l/email-protection#9ffdedfef1fbf0f1f2fef3fefdfea9dff8f2fef6f3b1fcf0f2">Email</a></li>
+            <li><a href="mailto:brandonmalaba6@gmail.com">Email</a></li>
             <li><a href="cv.html">Profile</a></li>
         </ul>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         function submitForm() {
-            const email = document.getElementById('email').value.trim();
-            const message = document.getElementById('message').value.trim();
-            if (!email || !message) {
-                [document.getElementById('email'), document.getElementById('message')].forEach(el => {
-                    if (!el.value.trim()) { el.style.borderColor = 'var(--gold)'; setTimeout(() => el.style.borderColor = '', 1500); }
+            const RECIPIENT = 'brandonmalaba6@gmail.com';
+            const senderEmail = document.getElementById('email').value.trim();
+            const message    = document.getElementById('message').value.trim();
+
+            // Validate required fields — pulse gold border on empty
+            if (!senderEmail || !message) {
+                ['email','message'].forEach(function(id) {
+                    const el = document.getElementById(id);
+                    if (!el.value.trim()) {
+                        el.style.borderColor = 'var(--gold)';
+                        el.style.boxShadow   = '0 0 0 2px rgba(212,175,55,0.25)';
+                        setTimeout(function() {
+                            el.style.borderColor = '';
+                            el.style.boxShadow   = '';
+                        }, 1800);
+                    }
                 });
                 return;
             }
-            const fname = document.getElementById('fname').value;
-            const lname = document.getElementById('lname').value;
-            const org = document.getElementById('org').value;
+
+            const fname   = document.getElementById('fname').value.trim();
+            const lname   = document.getElementById('lname').value.trim();
+            const org     = document.getElementById('org').value.trim();
             const subject = document.getElementById('subject').value || 'Website Instruction';
-            const body = `Name: ${fname} ${lname}\nOrganisation: ${org}\n\n${message}`;
-            window.location.href = `mailto:brandonmalaba6@gma
+
+            const body = [
+                'From:    ' + fname + ' ' + lname,
+                'Email:   ' + senderEmail,
+                'Firm:    ' + (org || 'N/A'),
+                '',
+                '--- INSTRUCTION ---',
+                message,
+                '',
+                '---',
+                'Sent via brandonmalaba.co.za'
+            ].join('
+');
+
+            // Open default mail client addressed to Brandon
+            window.location.href =
+                'mailto:' + RECIPIENT +
+                '?subject=' + encodeURIComponent(subject) +
+                '&body='    + encodeURIComponent(body);
+
+            // Show success state after short delay
+            setTimeout(function() {
+                const form = document.getElementById('glassForm');
+                form.querySelector('.form-inner').style.display = 'none';
+                document.getElementById('formSuccess').style.display = 'block';
+            }, 400);
+        }
+    </script>
+
+</body>
+</html>
