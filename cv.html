@@ -363,16 +363,16 @@
                     <div class="stat-box"><strong>PVT</strong><span>400h</span></div>
                     <div class="stat-box"><strong>JHB</strong><span>Based</span></div>
                 </div>
-                <button class="btn-gold" onclick="openPDF('https://raw.githubusercontent.com/BT88-dev/portfolio/main/Documents/CV.pdf','Executive CV')">Preview Executive CV</button>
+                <button class="btn-gold" onclick="openPDF('Documents/CV.pdf','Executive CV')">Preview Executive CV</button>
                 <button class="btn-ghost" onclick="openPDF('cover-letter.html','Letter of Intent')">Letter of Intent</button>
             </div>
 
             <div class="glass-panel">
                 <p class="vault-label">Verification Vault</p>
-                <button class="vault-item" onclick="openPDF('https://raw.githubusercontent.com/BT88-dev/portfolio/main/Documents/ID_Document.pdf','Identity Document')">Identity Document <span>↗</span></button>
-                <button class="vault-item" onclick="openPDF('https://raw.githubusercontent.com/BT88-dev/portfolio/main/Documents/LLB_Certificate.pdf','LLB Certificate')">LLB Degree Certificate <span>↗</span></button>
-                <button class="vault-item" onclick="openPDF('https://raw.githubusercontent.com/BT88-dev/portfolio/main/Documents/PVT_Certificate.pdf','PVT Certificate')">PVT Certificate <span>↗</span></button>
-                <button class="vault-item" onclick="openSecure('https://raw.githubusercontent.com/BT88-dev/portfolio/main/Documents/Transcript.pdf','Academic Transcript')">Academic Transcript <span class="lock">🔒</span></button>
+                <button class="vault-item" onclick="openPDF('Documents/ID_Document.pdf','Identity Document')">Identity Document <span>↗</span></button>
+                <button class="vault-item" onclick="openPDF('Documents/LLB_Certificate.pdf','LLB Certificate')">LLB Degree Certificate <span>↗</span></button>
+                <button class="vault-item" onclick="openPDF('Documents/PVT_Certificate.pdf','PVT Certificate')">PVT Certificate <span>↗</span></button>
+                <button class="vault-item" onclick="openSecure('Documents/Transcript.pdf','Academic Transcript')">Academic Transcript <span class="lock">🔒</span></button>
                 <div class="location-pill">◆ &nbsp; Johannesburg, South Africa</div>
             </div>
         </aside>
@@ -669,9 +669,7 @@
         <div class="pdf-toolbar">
             <span class="pdf-title" id="pdfTitle">Document</span>
             <div style="display:flex;gap:10px;align-items:center;">
-                <a id="pdfDownload" href="" download style="background:none;border:1px solid var(--glass-border-bright);color:var(--gold);padding:8px 18px;font-size:0.58rem;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border-radius:2px;text-decoration:none;font-family:var(--font-cond);transition:background 0.3s, box-shadow 0.3s;">
-                   ↓ Download
-                </a>
+<!-- Download button removed to favor container view -->
                 <button class="pdf-close" onclick="closePDF()">✕ Close</button>
             </div>
         </div>
@@ -698,8 +696,7 @@
         function openPDF(file, title) {
             document.getElementById('pdfTitle').textContent = title;
             document.getElementById('pdfFrame').src = file;
-            const dl = document.getElementById('pdfDownload');
-            if (dl) { dl.href = file; dl.download = title.replace(/[^a-zA-Z0-9_\-\.]/g,'_') + '.pdf'; }
+// Download logic removed
             document.getElementById('pdfModal').classList.add('open');
             document.body.style.overflow = 'hidden';
         }
