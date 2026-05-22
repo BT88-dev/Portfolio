@@ -213,6 +213,32 @@
             margin: 0 10px;
         }
 
+        /* ── ETHOS SECTION ── */
+        .hero-ethos {
+            margin-top: 60px;
+            padding: 32px 32px;
+            background: rgba(14,13,20,0.4);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 2px;
+            opacity: 0; animation: fade-up 0.6s 1.0s forwards;
+        }
+
+        .ethos-label {
+            font-size: 0.55rem; font-weight: 600;
+            letter-spacing: 3px; text-transform: uppercase;
+            color: var(--gold); opacity: 0.7;
+            margin-bottom: 12px;
+        }
+
+        .ethos-statement {
+            font-family: var(--font-serif);
+            font-size: 0.95rem; font-weight: 400;
+            line-height: 1.6;
+            color: var(--parchment);
+            font-style: italic;
+        }
+
         /* Ghost text — refined, lower opacity */
         .hero-ghost {
             position: absolute;
@@ -447,6 +473,11 @@
                 <span>·</span>
                 Corporate Law Interest
             </p>
+
+            <div class="hero-ethos">
+                <p class="ethos-label">Professional Ethos</p>
+                <p class="ethos-statement">"Rigorous legal analysis grounded in ethical advocacy. I bring precision, diligence, and a commitment to protecting client interests with integrity."</p>
+            </div>
 
         </div>
 

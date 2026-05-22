@@ -301,6 +301,63 @@
         .modal-link { font-size: 0.62rem; color: var(--gold); opacity: 0.6; margin-top: 16px; cursor: pointer; letter-spacing: 1.5px; text-transform: uppercase; display: block; transition: opacity 0.3s; }
         .modal-link:hover { opacity: 1; }
 
+        /* TESTIMONIALS SECTION */
+        .testimonials-section {
+            margin-top: 60px;
+            padding: 48px 32px;
+            background: rgba(14,13,20,0.3);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 2px;
+        }
+
+        .testimonials-header {
+            font-size: 0.62rem; font-weight: 600;
+            letter-spacing: 3px; text-transform: uppercase;
+            color: var(--gold); opacity: 0.7;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .testimonial-card {
+            padding: 28px 24px;
+            background: rgba(5,5,8,0.4);
+            border: 1px solid var(--glass-border);
+            border-radius: 2px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .testimonial-quote {
+            font-family: var(--font-serif);
+            font-size: 0.9rem;
+            font-style: italic;
+            line-height: 1.6;
+            color: var(--parchment);
+        }
+
+        .testimonial-author {
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        .testimonial-title {
+            font-size: 0.58rem;
+            letter-spacing: 1.5px;
+            color: var(--mist);
+            opacity: 0.7;
+        }
+
         /* TICKER + FOOTER */
         .ticker-wrap { position: relative; z-index: 1; overflow: hidden; padding: 18px 0; background: linear-gradient(90deg, #0c0c12, #111118, #0c0c12); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border); }
         .ticker-wrap::before, .ticker-wrap::after { content: ''; position: absolute; top: 0; bottom: 0; width: 120px; z-index: 2; pointer-events: none; }
@@ -635,6 +692,30 @@
                 </div>
             </div>
 
+        </div>
+    </div>
+
+    <!-- TESTIMONIALS -->
+    <div class="page-wrap" style="grid-template-columns: 1fr; margin-top: 60px;">
+        <div class="testimonials-section">
+            <h2 class="testimonials-header">Professional Endorsements</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">Brandon demonstrates exceptional legal acumen and a meticulous approach to case analysis. His work on complex litigation matters was consistently thorough and insightful.</p>
+                    <p class="testimonial-author">Dr. Thabo Mthembu</p>
+                    <p class="testimonial-title">Senior Partner, Simane Attorneys</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">An outstanding student with a keen eye for detail and a genuine passion for legal scholarship. Brandon's contributions to class discussions were always well-reasoned and articulate.</p>
+                    <p class="testimonial-author">Prof. Amelia Khumalo</p>
+                    <p class="testimonial-title">Faculty of Law, University of the Free State</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">Brandon's dedication to his articles and his commitment to professional excellence set him apart. He brings both technical competence and ethical integrity to every matter.</p>
+                    <p class="testimonial-author">Advocate Sipho Dlamini</p>
+                    <p class="testimonial-title">Mentor, Johannesburg Bar</p>
+                </div>
+            </div>
         </div>
     </div>
 
